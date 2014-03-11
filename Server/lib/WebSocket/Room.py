@@ -30,8 +30,10 @@ class Room:
         room_id : string
         client : lib.WebSocket.Client.Client
         """
-        if room_id in Room._rooms and Room._rooms[room_id].count(client) > 0:
+        if room_id in Room._rooms and client in Room._rooms[room_id]:
+            print Room._rooms[room_id]
             Room._rooms[room_id].remove(client)
+            print Room._rooms[room_id]
 
     @staticmethod
     def get_room_clients(room_id):

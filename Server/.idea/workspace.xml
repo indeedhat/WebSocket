@@ -23,28 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Log/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/WebSocket/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Client.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/WebSocket/Client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="45" selection-start="2062" selection-end="2062" vertical-scroll-proportion="0.6152758" vertical-offset="772" max-vertical-offset="3247">
+            <state line="153" column="8" selection-start="4491" selection-end="4491" vertical-scroll-proportion="0.37018424" vertical-offset="2380" max-vertical-offset="4471">
               <folding>
                 <element signature="e#21#36#0" expanded="true" />
               </folding>
@@ -52,10 +34,57 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Parser.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/WebSocket/Frame/Parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="5" selection-start="975" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
+              <folding>
+                <element signature="e#21#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/WebSocket/Frame/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="8" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="asyncore.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/asyncore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="222" column="6" selection-start="7002" selection-end="7002" vertical-scroll-proportion="0.0" vertical-offset="3774" max-vertical-offset="11305">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_socket.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/_socket.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="489" column="8" selection-start="13348" selection-end="13348" vertical-scroll-proportion="0.0" vertical-offset="8740" max-vertical-offset="10982">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EndPoint.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EndPoint.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="24" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/WebSocket/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+            <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="833">
               <folding />
             </state>
           </provider>
@@ -64,7 +93,7 @@
       <file leaf-file-name="Handler.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/WebSocket/Handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+            <state line="31" column="34" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="646">
               <folding />
             </state>
           </provider>
@@ -73,7 +102,16 @@
       <file leaf-file-name="Room.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/WebSocket/Room.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="38" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+            <state line="30" column="19" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="builtins.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/builtins.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1787" column="8" selection-start="39985" selection-end="39985" vertical-scroll-proportion="0.0" vertical-offset="30078" max-vertical-offset="34646">
               <folding />
             </state>
           </provider>
@@ -89,12 +127,15 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/WebSocket/Room.py" />
         <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/MyTurn.py" />
         <option value="$PROJECT_DIR$/lib/Log/__init__.py" />
         <option value="$PROJECT_DIR$/lib/WebSocket/Server.py" />
         <option value="$PROJECT_DIR$/lib/WebSocket/Handler.py" />
+        <option value="$PROJECT_DIR$/lib/WebSocket/Room.py" />
+        <option value="$PROJECT_DIR$/EndPoint.py" />
+        <option value="$PROJECT_DIR$/lib/WebSocket/Frame/__init__.py" />
+        <option value="$PROJECT_DIR$/lib/WebSocket/Frame/Parser.py" />
         <option value="$PROJECT_DIR$/lib/WebSocket/Client.py" />
       </list>
     </option>
@@ -149,6 +190,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSocket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSocket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -163,7 +258,7 @@
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.Client">
+  <component name="RunManager" selected="Python.EndPoint">
     <configuration default="false" name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -233,6 +328,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Server" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/WebSocket/Client.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="EndPoint" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Server" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/EndPoint.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -359,18 +472,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.server" />
       <item index="1" class="java.lang.String" itemvalue="Python.Server" />
       <item index="2" class="java.lang.String" itemvalue="Python.MyTurn" />
       <item index="3" class="java.lang.String" itemvalue="Python.Client" />
+      <item index="4" class="java.lang.String" itemvalue="Python.EndPoint" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.MyTurn" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Client" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Server" />
-        <item index="3" class="java.lang.String" itemvalue="Python.server" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.EndPoint" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MyTurn" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Client" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Server" />
+        <item index="4" class="java.lang.String" itemvalue="Python.server" />
       </list>
     </recent_temporary>
   </component>
@@ -390,13 +505,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20927724" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29989213" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -423,20 +538,125 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/Log/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="25" selection-start="6297" selection-end="6297" vertical-scroll-proportion="0.0" vertical-offset="3270" max-vertical-offset="3978">
+          <folding>
+            <element signature="e#21#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/asyncore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="222" column="6" selection-start="7002" selection-end="7002" vertical-scroll-proportion="0.0" vertical-offset="3774" max-vertical-offset="11305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/_socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="489" column="8" selection-start="13348" selection-end="13348" vertical-scroll-proportion="0.0" vertical-offset="8740" max-vertical-offset="10982">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EndPoint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="34" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="68" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Log/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="0" selection-start="2566" selection-end="2566" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="3247">
+          <folding>
+            <element signature="e#21#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="38" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EndPoint.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="170" column="21" selection-start="5374" selection-end="5374" vertical-scroll-proportion="0.0" vertical-offset="2217" max-vertical-offset="2992">
-          <folding>
-            <element signature="e#21#36#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="8" selection-start="6817" selection-end="6817" vertical-scroll-proportion="0.0" vertical-offset="3400" max-vertical-offset="9843">
-          <folding />
-        </state>
+        <state line="200" column="8" selection-start="6817" selection-end="6817" vertical-scroll-proportion="0.0" vertical-offset="3400" max-vertical-offset="9843" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/WebSocket/Server.py">
@@ -457,9 +677,7 @@
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/select.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="4" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="1003">
-          <folding />
-        </state>
+        <state line="14" column="4" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="1003" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Log/__init__.py">
@@ -471,46 +689,22 @@
     </entry>
     <entry file="file://C:/Python27/Lib/SocketServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="13" selection-start="7299" selection-end="7299" vertical-scroll-proportion="0.0" vertical-offset="3536" max-vertical-offset="12529">
-          <folding />
-        </state>
+        <state line="208" column="13" selection-start="7299" selection-end="7299" vertical-scroll-proportion="0.0" vertical-offset="3536" max-vertical-offset="12529" />
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/SocketServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="13" selection-start="7299" selection-end="7299" vertical-scroll-proportion="0.0" vertical-offset="3233" max-vertical-offset="12461">
-          <folding />
-        </state>
+        <state line="208" column="13" selection-start="7299" selection-end="7299" vertical-scroll-proportion="0.0" vertical-offset="3233" max-vertical-offset="12461" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/select.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="4" selection-start="306" selection-end="306" vertical-scroll-proportion="0.115983024" vertical-offset="156" max-vertical-offset="1003">
-          <folding />
-        </state>
+        <state line="14" column="4" selection-start="306" selection-end="306" vertical-scroll-proportion="0.115983024" vertical-offset="156" max-vertical-offset="1003" />
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="8" selection-start="6817" selection-end="6817" vertical-scroll-proportion="0.0" vertical-offset="3400" max-vertical-offset="9792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/asyncore.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="556" column="29" selection-start="17819" selection-end="17819" vertical-scroll-proportion="1.1697313" vertical-offset="8472" max-vertical-offset="11152">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EndPoint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="24" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding>
-            <element signature="e#21#36#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="200" column="8" selection-start="6817" selection-end="6817" vertical-scroll-proportion="0.0" vertical-offset="3400" max-vertical-offset="9792" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Log/__init__.py">
@@ -534,23 +728,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Room.py">
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="38" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+        <state line="31" column="34" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Handler.py">
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/_socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+        <state line="489" column="8" selection-start="13348" selection-end="13348" vertical-scroll-proportion="0.0" vertical-offset="8740" max-vertical-offset="10982">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/asyncore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="222" column="6" selection-start="7002" selection-end="7002" vertical-scroll-proportion="0.0" vertical-offset="8179" max-vertical-offset="11152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1787" column="8" selection-start="39985" selection-end="39985" vertical-scroll-proportion="0.0" vertical-offset="30078" max-vertical-offset="34646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="19" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EndPoint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Frame/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="8" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/WebSocket/Frame/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="5" selection-start="975" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
+          <folding>
+            <element signature="e#21#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/WebSocket/Client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="45" selection-start="2062" selection-end="2062" vertical-scroll-proportion="0.6152758" vertical-offset="772" max-vertical-offset="3247">
+        <state line="153" column="8" selection-start="4491" selection-end="4491" vertical-scroll-proportion="0.37018424" vertical-offset="2380" max-vertical-offset="4471">
           <folding>
             <element signature="e#21#36#0" expanded="true" />
           </folding>

@@ -1,0 +1,29 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="lib/js/WebSocket/Client.js"></script>
+    <script>
+      $(document).ready(function () {
+        var ws = WebSocket_Client.init();
+        ws.connect();
+        
+        $('input#send').on('click', function() {
+          ws.send($('input#message').val());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="message" id="message" />
+      <input type="submit" name="send" id="send" value="send" />
+    </form>
+  </body>
+</html>
