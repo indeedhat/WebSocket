@@ -95,7 +95,7 @@ class Parser:
             self._frame.length = unpack('!H', new_length)[0]
 
     def _mask_bytes(self):
-        """parse the mack key"""
+        """parse the mask key"""
         self._frame.mask_key = self._socket.recv(4)
 
     def _payload_bytes(self):
