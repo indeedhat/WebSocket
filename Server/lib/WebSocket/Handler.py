@@ -29,5 +29,5 @@ class Handler:
         clients = Room.get_room_clients(room_id)
 
         for client in clients:
-            if client.client_ready:
+            if client.client_ready():
                 client.send_bytes(message_frame)

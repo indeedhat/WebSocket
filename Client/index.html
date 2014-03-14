@@ -16,14 +16,26 @@ and open the template in the editor.
         
         $('input#send').on('click', function() {
           ws.send($('input#message').val());
+          return false;
         });
       });
     </script>
+    <style>
+      span.message_name {float:left;}
+      span.message_date {float:right;}
+      span.message_text {clear:both;display: block;}
+      div.message {border-bottom:1px solid black;}
+    </style>
   </head>
   <body>
     <form>
       <input type="text" name="message" id="message" />
       <input type="submit" name="send" id="send" value="send" />
     </form>
+    <br />
+    <strong>Messages:</strong>
+    <div id="messages" style="width:600px;border:1px solid black;">
+      
+    </div>
   </body>
 </html>

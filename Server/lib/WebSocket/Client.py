@@ -1,8 +1,8 @@
 __author__ = '4423'
 
 import asyncore
-import struct
 import json
+import time
 from mimetools import Message
 from base64 import b64encode
 from hashlib import sha1
@@ -10,8 +10,8 @@ from StringIO import StringIO
 from lib.Log import Log
 from lib.WebSocket.Room import Room
 from lib.WebSocket.Handler import Handler as RoomManager
-from lib.WebSocket.Frame import Frame
 from lib.WebSocket.Frame.Parser import Parser
+from lib.WebSocket.Frame.Builder import Builder
 
 
 class Client(asyncore.dispatcher_with_send):
@@ -23,7 +23,6 @@ class Client(asyncore.dispatcher_with_send):
     _server = None
     _room_id = ""
     _client_name = ""
-    client_ready = False
 
     _ready_state = "connecting"
     _buffer = ""
@@ -44,19 +43,69 @@ class Client(asyncore.dispatcher_with_send):
         self._addr = address
         self._server = server
 
+    def client_ready(self):
+        """Check if the client is ready to receive messages
+
+        Returns
+        -------
+        Boolean
+        """
+        Log.add(self._ready_state == "open", Log.NOTICE)
+        return self._ready_state == "open"
+
     def handle_read(self):
         """Handle incoming data"""
         if self._ready_state == "connecting":
             self._perform_handshake()
 
-        elif not self.client_ready:
-            message = self._parse_frame()
-            self._perform_login(message)
+        elif self._ready_state == "authenticating":
+            frame = Parser.parse(self.socket)
+            self._perform_login(frame)
 
         elif self._ready_state == "open":
-            message = self._parse_frame()
-            Log.add("Decoded Message: %s" % message)
-            self.send(message)
+            frame = Parser.parse(self.socket)
+            Log.add("Decoded Message: %s" % frame.payload)
+            self._handle_frame(frame)
+
+    def _handle_frame(self, frame):
+        """Direct incoming frames to the appropriate handler
+
+        Parameters
+        ----------
+        frame : lib.WebSocket.Frame.Frame
+        """
+        if frame.opcode == 0x0:
+            Log.add("We do not yet support continuation frames", Log.NOTICE)
+        elif frame.opcode == 0x1:
+            self._handle_message(frame)
+        elif frame.opcode == 0x2:
+            Log.add("We do not yet support binary frames", Log.NOTICE)
+        elif frame.opcode == 0x3:
+            Log.add("This will be used when i write the client from scratch (login)", Log.NOTICE)
+        elif frame.opcode == 0x4:
+            Log.add("This will be used when i write the client from scratch (cmd)", Log.NOTICE)
+        elif frame.opcode == 0x8:
+            self.handle_close()
+        elif frame.opcode == 0x9:
+            Log.add("pong needs to be added soon", Log.NOTICE)
+        else:
+            Log.add("unsupported opcode %d" % frame.opcode, Log.NOTICE)
+
+    def _handle_message(self, frame):
+        """Handle incoming text frame
+
+        Parameters
+        ----------
+        frame : lib.WebSocket.Frame.Frame
+        """
+        json_obj = json.loads(str(frame.payload.strip()))
+
+        if "cmd" in json_obj:
+            pass
+        elif "msg" in json_obj:
+            self.send(json_obj['msg'])
+        else:
+            Log.add(json_obj, Log.NOTICE)
 
     def _perform_handshake(self):
         """Perform The WebSocket Handshake"""
@@ -86,37 +135,35 @@ class Client(asyncore.dispatcher_with_send):
                 if self.send_bytes(response):
                     Log.add("Handshake successful")
                     self._assign_room(data)
-                    self._ready_state = "open"
+                    self._ready_state = "authenticating"
 
         except Exception as e:
             Log.add(e.args)
 
-    def _perform_login(self, message):
+    def _perform_login(self, frame):
         """Perform login attempt
 
         Parameters
         ----------
-        message : string
+        frame : lib.WebSocket.Frame.Frame
         """
         try:
-            json_obj = json.loads(message)
-            Log.add(json_obj)
-            if json_obj['cmd'] == "login" and len(json_obj['name']):
-                self._client_name = json_obj['name']
-                self.client_ready = True
+            if frame.opcode == 0x1 and frame.length > 0:
+                json_obj = json.loads(frame.payload)
+                Log.add(json_obj)
+                if json_obj['cmd'] == "login" and len(json_obj['name']):
+                    self._client_name = json_obj['name']
+                    self._ready_state = "open"
 
-                sys_message = {
-                    "user": "__system__",
-                    "ip": "0.0.0.0",
-                    "msg": "User \"%s\" has entered the room" % self._client_name
-                }
-                Log.add(sys_message)
-                print "login message: ", sys_message
-                RoomManager.send_to_room(self._room_id, self._create_frame(json.dumps(sys_message)))
+                    sys_message = {
+                        "usr": "__system__",
+                        "msg": "User \"%s\" has entered the room" % self._client_name,
+                        "tme": int(time.time())
+                    }
+                    Log.add(sys_message)
+                    RoomManager.send_to_room(self._room_id, Builder.build(json.dumps(sys_message)))
         except Exception as e:
             Log.add(e.args)
-
-
 
     def _assign_room(self, headers):
         """Assign the client to the room they are trying to join
@@ -134,74 +181,6 @@ class Client(asyncore.dispatcher_with_send):
         self._room_id = room_id
         Room.add_to_room(room_id, self)
 
-    def _parse_frame(self):
-        """Decode an incoming frame
-
-        Returns
-        -------
-        String
-        """
-        frame = Parser.parse(self.socket)
-        print frame
-        print frame.fin, frame.length, frame.mask, frame.mask_key, frame.opcode, frame.payload
-        frame_pa = ''
-        i = 0
-        for dat in frame.payload:
-            frame_pa += chr(ord(dat) ^ ord(frame.mask_key[i%4]))
-            i += 1
-
-        print frame_pa
-        
-        return
-
-        self._buffer = self.recv(1024).strip()
-
-        if len(self._buffer) == 0:
-            return
-        code_length = ord(self._buffer[1]) & 127
-        i = 0
-        frame = ''
-        if code_length == 126:
-            masks = self._buffer[4:8]
-            data = self._buffer[8:]
-        elif code_length == 127:
-            masks = self._buffer[10:14]
-            data = self._buffer[14:]
-        else:
-            masks = self._buffer[2:6]
-            data = self._buffer[6:]
-
-        for dat in data:
-            frame += chr(ord(dat) ^ ord(masks[i%4]))
-            i += 1
-
-        self._buffer = ""
-        return frame
-
-    def _create_frame(self, data):
-        """Create a message frame to send back to clients
-
-        Parameters
-        ----------
-        data : String
-
-        Returns
-        -------
-        String
-        """
-        token = '\x81'
-        print data
-        data_length = len(data)
-
-        if data_length < 126:
-            token += struct.pack("B", data_length)
-        elif data_length <= 0xFFFF:
-            token += struct.pack("!BH", 126, data_length)
-        else:
-            token += struct.pack("!BQ", 127, data_length)
-
-        return '%s%s' % (token, data)
-
     def send(self, data):
         """Send a message to the room at large
 
@@ -209,18 +188,15 @@ class Client(asyncore.dispatcher_with_send):
         ----------
         data : String
         """
-        print "send data: "
-        print self.bit_array_me(data)
         if self._ready_state == "open":
-            RoomManager.send_to_room(self._room_id, self._create_frame(data))
+            Log.add(data)
+            obj = json.dumps({
+                "msg": data,
+                "usr": self._client_name,
+                "tme": int(time.time())
+            })
 
-    def bit_array_me(self, s):
-        result = []
-        for c in s:
-            bits = bin(ord(c))[2:]
-            bits = '00000000'[len(bits):] + bits
-            result.extend([int(b) for b in bits])
-        return result
+            RoomManager.send_to_room(self._room_id, Builder.build(obj))
 
     def send_bytes(self, data):
         """Send raw data back to the client
@@ -234,6 +210,7 @@ class Client(asyncore.dispatcher_with_send):
         Boolean
         """
         try:
+            Log.add(data, Log.NOTICE)
             asyncore.dispatcher_with_send.send(self, data)
             self._buffer = ""
             return True
@@ -246,12 +223,11 @@ class Client(asyncore.dispatcher_with_send):
         """Cleanup a closed connection"""
         Log.add("got to close")
         sys_message = {
-            "user": "__system__",
-            "ip": "0.0.0.0",
-            "msg": "User \"%s\" has left the room" % self._client_name
+            "usr": "__system__",
+            "msg": "User \"%s\" has left the room" % self._client_name,
+            "tme": int(time.time())
         }
         Log.add(sys_message)
-        print 'close data', sys_message
-        RoomManager.send_to_room(self._room_id, self._create_frame(json.dumps(sys_message)))
+        RoomManager.send_to_room(self._room_id, Builder.build(json.dumps(sys_message)))
         Room.remove_from_room(self._room_id, self)
         self.close()

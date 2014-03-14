@@ -36,12 +36,16 @@ class Builder:
         payload : String
         """
         self._frame = Frame()
-
         self._frame.payload = payload
+
+        # build frame
+        self._first_byte()
+        self._length_byte()
+        self._payload()
 
     def _first_byte(self):
         """Set the first byte of the frame"""
-        self._buffer = 0x81
+        self._buffer = struct.pack('!B', 0x81)
 
     def _length_byte(self):
         """Set the length byte(s) of the frame"""
@@ -56,7 +60,7 @@ class Builder:
 
     def _payload(self):
         """Add the payload data to the frame"""
-        self._buffer += self._frame.payload
+        self._buffer = bytes(self._buffer + self._frame.payload)
 
     def _return(self):
         """return the completed frame

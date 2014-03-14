@@ -108,7 +108,7 @@ class Parser:
         frame_pa = ''
         i = 0
         for dat in self._frame.payload:
-            frame_pa += chr(ord(dat) ^ ord(self._frame.payload.mask_key[i%4]))
+            frame_pa += chr(ord(dat) ^ ord(self._frame.mask_key[i % 4]))
             i += 1
 
         self._frame.payload = frame_pa

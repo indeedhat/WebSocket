@@ -10,10 +10,10 @@ class Log:
     NOTICE = 10
     
 
-    level = Log.Disabled
+    level = DISABLED
 
     @staticmethod
-    def add(log_text, level=Log.NOTICE):
+    def add(log_text, level=NOTICE):
         """Add a log entry
 
         Parameters
@@ -31,4 +31,4 @@ class Log:
         ----------
         enable : Boolean
         """
-        Log._level = level
+        Log.level = level

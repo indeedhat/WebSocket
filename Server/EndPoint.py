@@ -5,6 +5,6 @@ from lib.WebSocket.Server import WebSocketServer
 from lib.WebSocket.Handler import Handler
 from lib.Log import Log
 
-#Log.enable_log(True)
+Log.enable_log(Log.NOTICE)
 WebSocketServer(4423, Handler)
 asyncore.loop(timeout=5)

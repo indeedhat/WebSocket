@@ -28,6 +28,7 @@ WebSocket_Client.prototype = {
   _port   : 4423,
   _roomId : "/",
   _socket : null,
+  _messages : [],
   
   setUrl : function(url)
   {
@@ -68,17 +69,50 @@ WebSocket_Client.prototype = {
     
     this._socket.onmessage = function(e) 
     {
-      console.log(e);
+      if (self._messages.unshift(JSON.parse(e.data)) > 10) {
+        self._messages.pop();
+      } 
+      
+      self._displayMessages();
     }
     
     this._socket.onmerror = function(e) 
     {
+      console.log("error:")
       console.log(e);
     }
   },
   
   send : function(message) 
   {
-    this._socket.send(message);
+    this._socket.send(JSON.stringify({msg:message}));
+  },
+  
+  _displayMessages : function()
+  {
+    var st = '';
+    
+    for (var i in this._messages) {
+      var m = this._messages[i]
+      st += '<div class="' + (m.usr === "__system__" ? 'system_' : '') + 'message">';
+      
+      if (m.usr != "__system__") {
+        st += '<span class="message_name">' + m.usr + '</span>';
+      }
+      var d = new Date(m.tme)
+      st += '<span class="message_date">' + tdt(d.getHours()) + ':' + tdt(d.getMinutes()) + ':' + tdt(d.getSeconds()) + '</span>';
+      
+      st += '<span class="message_text">' + m.msg + '</span>\
+        </div>';
+    }
+    
+    $('div#messages').html(st);
   }
 };
+
+function tdt(time)
+{
+  if (time > 10) 
+    return time;
+  return "0" + time;
+}
