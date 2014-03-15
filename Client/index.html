@@ -18,6 +18,10 @@ and open the template in the editor.
           ws.send($('input#message').val());
           return false;
         });
+        
+        $('input#test_cmd').on('click', function () {
+          ws.sendCommand("System|test", {arg1:true})
+        })
       });
     </script>
     <style>
@@ -31,6 +35,7 @@ and open the template in the editor.
     <form>
       <input type="text" name="message" id="message" />
       <input type="submit" name="send" id="send" value="send" />
+      <input type="button" name="test_cmd" id="test_cmd" value="test cmd" />
     </form>
     <br />
     <strong>Messages:</strong>

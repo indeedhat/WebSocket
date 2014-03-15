@@ -3,6 +3,7 @@ __author__ = '4423'
 import asyncore
 import json
 import time
+import lib.WebSocket.Command as Command
 from mimetools import Message
 from base64 import b64encode
 from hashlib import sha1
@@ -18,6 +19,7 @@ class Client(asyncore.dispatcher_with_send):
     """Web Socket Client connection"""
 
     SALT = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11'
+    CMD_ROOT = 'lib.WebSocket.Command'
 
     _addr = ()
     _server = None
@@ -101,9 +103,14 @@ class Client(asyncore.dispatcher_with_send):
         json_obj = json.loads(str(frame.payload.strip()))
 
         if "cmd" in json_obj:
-            pass
+            # run the command
+            parts = json_obj["cmd"].split('|')
+            Command.run_command(parts[0], parts[1], self, json_obj['args'])
+
         elif "msg" in json_obj:
+            # send the message back to the room at large
             self.send(json_obj['msg'])
+
         else:
             Log.add(json_obj, Log.NOTICE)
 
@@ -151,17 +158,9 @@ class Client(asyncore.dispatcher_with_send):
             if frame.opcode == 0x1 and frame.length > 0:
                 json_obj = json.loads(frame.payload)
                 Log.add(json_obj)
-                if json_obj['cmd'] == "login" and len(json_obj['name']):
-                    self._client_name = json_obj['name']
-                    self._ready_state = "open"
-
-                    sys_message = {
-                        "usr": "__system__",
-                        "msg": "User \"%s\" has entered the room" % self._client_name,
-                        "tme": int(time.time())
-                    }
-                    Log.add(sys_message)
-                    RoomManager.send_to_room(self._room_id, Builder.build(json.dumps(sys_message)))
+                if json_obj['cmd'] == "System|login" and len(json_obj['args']):
+                    parts = json_obj['cmd'].split('|')
+                    Command.run_command(parts[0], parts[1], self, json_obj['args'])
         except Exception as e:
             Log.add(e.args)
 
@@ -197,6 +196,17 @@ class Client(asyncore.dispatcher_with_send):
             })
 
             RoomManager.send_to_room(self._room_id, Builder.build(obj))
+
+    def send_json_object(self, json_object):
+        """Send a pre defined json object to the room
+
+        Parameters
+        ----------
+        json_object : dictionary
+        """
+        if self._ready_state == "open":
+            Log.add(json_object)
+            RoomManager.send_to_room(self._room_id, Builder.build(json.dumps(json_object)))
 
     def send_bytes(self, data):
         """Send raw data back to the client

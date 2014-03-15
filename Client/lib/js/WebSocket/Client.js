@@ -59,7 +59,7 @@ WebSocket_Client.prototype = {
     this._socket.onopen = function(e) 
     {
       console.log('socket open');
-      self._socket.send('{"cmd":"login","name":"' + Math.random() + '"}');
+      self._socket.send('{"cmd":"System|login","args":{"name":"' + Math.random() + '"}}');
     }
     
     this._socket.onclose = function(e) 
@@ -86,6 +86,11 @@ WebSocket_Client.prototype = {
   send : function(message) 
   {
     this._socket.send(JSON.stringify({msg:message}));
+  },
+  
+  sendCommand : function(cmd, args)
+  {
+    this._socket.send(JSON.stringify({cmd:cmd,args:args}));
   },
   
   _displayMessages : function()
