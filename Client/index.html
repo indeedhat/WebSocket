@@ -32,7 +32,12 @@ and open the template in the editor.
     </style>
   </head>
   <body>
-    <form>
+    <form id="login_form">
+      <input type="text" name="username" id="username_field" placeholder="username" />
+      <input type="password" name="password" id="password_field" placeholder="password" />
+      <input type="submit" name="login" id="login_field" value="Login" />
+    </form>
+    <form id="send_form">
       <input type="text" name="message" id="message" />
       <input type="submit" name="send" id="send" value="send" />
       <input type="button" name="test_cmd" id="test_cmd" value="test cmd" />
